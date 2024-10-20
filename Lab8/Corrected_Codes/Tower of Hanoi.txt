@@ -1,0 +1,18 @@
+Corrected Code:
+// Tower of Hanoi
+public class MainClass {
+   public static void main(String[] args) {
+      int nDisks = 3; // number of disks
+      doTowers(nDisks, 'A', 'B', 'C'); // move from A to C using B
+   }
+
+   public static void doTowers(int topN, char from, char inter, char to) {
+      if (topN == 1) {
+         System.out.println("Disk 1 from " + from + " to " + to); // move disk 1
+      } else {
+         doTowers(topN - 1, from, to, inter); // move top N-1 disks to inter
+         System.out.println("Disk " + topN + " from " + from + " to " + to); // move disk N
+         doTowers(topN - 1, inter, from, to); // move disks from inter to to
+      }
+   }
+}

@@ -1,0 +1,17 @@
+// Armstrong Number
+class Armstrong {
+    public static void main(String args[]) {
+        int num = Integer.parseInt(args[0]);
+        int n = num;  // store original number for later comparison
+        int check = 0, remainder;
+        while (num > 0) {
+            remainder = num % 10;  // get last digit
+            check = check + (int) Math.pow(remainder, 3);  // add cube of remainder
+            num = num / 10;  // reduce the number
+        }
+        if (check == n)
+            System.out.println(n + " is an Armstrong Number");
+        else
+            System.out.println(n + " is not an Armstrong Number");
+    }
+}
